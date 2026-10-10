@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>IP Address Tracker</title>
+</head>
+<body>
+  <header class="hero">
+    <h1 class="hero__title">IP Address Tracker</h1>
+
+    <form class="search" id="search-form">
+      <label class="sr-only" for="query">Search for any IP address or domain</label>
+      <input class="search__input" id="query" type="text"
+             placeholder="Search for any IP address or domain" autocomplete="off">
+      <button class="search__btn" type="submit" aria-label="Search">&gt;</button>
+    </form>
+
+    <p class="error" id="error" role="alert" hidden></p>
+
+    <dl class="info" aria-live="polite">
+      <div class="info__item">
+        <dt>IP Address</dt>
+        <dd id="ip">-</dd>
+      </div>
+      <div class="info__item">
+        <dt>Location</dt>
+        <dd id="location">-</dd>
+      </div>
+      <div class="info__item">
+        <dt>Timezone</dt>
+        <dd id="timezone">-</dd>
+      </div>
+      <div class="info__item">
+        <dt>ISP</dt>
+        <dd id="isp">-</dd>
+      </div>
+    </dl>
+  </header>
+
+  <main id="map" aria-label="Mapa de ubicación"></main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
